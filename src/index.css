@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Dark neon premium theme */
+    --background: 222 15% 6%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 222 15% 8%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 262 80% 64%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 222 20% 12%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 222 20% 12%;
+    --muted-foreground: 215 16% 65%;
+
+    --accent: 183 68% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 100%;
+    --input: 0 0% 100%;
+    --ring: 262 80% 64%;
+
+    --radius: 1rem;
+
+    /* Neon colors */
+    --neon-purple: 262 80% 64%;
+    --neon-magenta: 300 80% 64%;
+    --neon-cyan: 183 68% 50%;
+    --neon-lime: 145 73% 50%;
+    
+    /* Shadows & glows */
+    --glow-purple: 0 0 24px rgba(124, 77, 255, 0.28);
+    --glow-cyan: 0 0 24px rgba(48, 213, 200, 0.28);
+    --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.45);
+  }
+
+  .dark {
+    --background: 222 15% 6%;
+    --foreground: 0 0% 98%;
+
+    --card: 222 20% 10%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 222 15% 8%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 262 80% 64%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 222 20% 12%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 222 20% 12%;
+    --muted-foreground: 215 16% 65%;
+
+    --accent: 183 68% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 100%;
+    --input: 0 0% 100%;
+    --ring: 262 80% 64%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-[#0F1115] text-foreground font-sans antialiased;
+  }
+  
+  /* Font feature settings for tabular numbers */
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@layer components {
+  /* Premium glass card */
+  .glass-card {
+    @apply bg-white/5 border border-white/10 rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.45)] backdrop-blur-sm;
+  }
+  
+  .glass-card-hover {
+    @apply glass-card transition-all duration-300 hover:shadow-[0_0_24px_rgba(124,77,255,0.28)] hover:border-white/20;
+  }
+  
+  /* Neon glow effects */
+  .glow-purple {
+    box-shadow: 0 0 24px rgba(124, 77, 255, 0.28);
+  }
+  
+  .glow-cyan {
+    box-shadow: 0 0 24px rgba(48, 213, 200, 0.28);
+  }
+  
+  /* Chip styles */
+  .chip {
+    @apply px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm transition-all duration-200;
+  }
+  
+  .chip-active {
+    @apply bg-primary/20 border-primary/50 text-primary shadow-[0_0_12px_rgba(124,77,255,0.3)];
+  }
+  
+  .chip-hover {
+    @apply hover:bg-white/10 hover:border-white/20;
+  }
+}
